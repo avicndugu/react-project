@@ -1,13 +1,12 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import Posts from './Posts.js';
 
-function App() {
+function Posts() {
   const [data, setData] = useState([]); 
 
   useEffect(() => { 
     const fetchData = () => {
-      fetch('http://jsonplaceholder.typicode.com/users')
+      fetch('http://jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
         .then((data) => { setData(data) })
       };
@@ -17,15 +16,18 @@ function App() {
   return (
     <div className="App">
       <div>
-        <ul>
+        <div>
           {data.map(item => (
-            <li key={item.id}>{item.id}   <span>{item.name}</span></li>
+            <>
+              <p key={item.userId}>{item.userId}</p>
+              <li key={item.userId}>{item.title}</li>
+              <li key={item.userId}>{item.body}</li>
+            </>
           ))}
-        </ul>
+        </div>
       </div>
-      <Posts />
     </div>
   );
 }
 
-export default App;
+export default Posts;
