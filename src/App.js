@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import Users from './Users.js';
 import Posts from './Posts.js';
+import { Link } from "react-router-dom";
 
 function App() {
   const [data, setData] = useState([]); 
@@ -24,6 +25,7 @@ function App() {
           ))}
         </ul>
       </div>
+      <Link to="/invoices">Invoices</Link>
       <Users allUsersData ={ data } />
       <Posts />
     </div>
