@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Invoices from "./routes/invoices";
 import Invoice from "./routes/invoice";
+import RoutedUsers from "./routes/routedusers";
+import RoutedUser from "./routes/routeduser";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +18,10 @@ root.render(
         <Route path="invoices" element={<Invoices />}>
           <Route path=":invoiceId" element={<Invoice />} />
         </Route>
-        <Route path="*" element={<main><p>Theres nothing here!</p></main>} />
+        <Route path="routedusers" element={<RoutedUsers />} >
+          <Route path=":userId" element={<RoutedUser />} />
+        </Route>
+        <Route path="*" element={<main><p>There's nothing here!</p> </main>} />
       </Routes>
     </Router>
   </React.StrictMode>

@@ -26,6 +26,7 @@ function App() {
         </ul>
       </div>
       <Link to="/invoices">Invoices</Link>
+      <Link to="/routedusers">Routed Users</Link> 
       <Users allUsersData ={ data } />
       <Posts />
     </div>
