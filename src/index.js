@@ -19,7 +19,7 @@ root.render(
           <Route path=":invoiceId" element={<Invoice />} />
         </Route>
         <Route path="routedusers" element={<RoutedUsers />} >
-          <Route path=":userId" element={<RoutedUser />} />
+          <Route path=":userName" element={<RoutedUser />} />
         </Route>
         <Route path="*" element={<main><p>There's nothing here!</p> </main>} />
       </Routes>
