@@ -6,7 +6,7 @@ export default function RoutedUsers() {
 
   useEffect(() => { 
     const fetchData = () => {
-      fetch('http://localhost:3000/ama-influencer.json')
+      fetch('http://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
         .then((data) => { setData(data) })
       };
@@ -18,7 +18,7 @@ export default function RoutedUsers() {
       <h2>Routed Users Page</h2>
       {data.map(user => (
         <>  
-          <Link to={`/routedusers/${user.username}`} key={user.id}>{user.id} {user.firstname} {user.secondname}</Link>
+          <Link to={`/routedusers/${user.id}`} key={user.id}>{user.id} {user.name}</Link>
           <br />
         </>
       ))}
