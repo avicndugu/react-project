@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import Users from './Users.js';
 import Posts from './Posts.js';
+import ParentElement from './ParentElement.js';
 import { Link } from "react-router-dom";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Link to="/invoices">Invoices</Link>
       <Link to="/routedusers">Routed Users</Link> 
       <Users allUsersData ={ data } />
+      <ParentElement />
       <Posts />
     </div>
   );

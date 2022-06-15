@@ -1,14 +1,14 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect, useRef } from 'react';
 
-function useFetch() {
+function useFetch(url) {
   const [loadingData, setLoadingData] = useState(false);
   const [data, setData] = useState(null);
   useEffect(() => { 
     const fetchData = async() => {
       try{
         setLoadingData(true);
-        fetch('http://jsonplaceholder.typicode.com/posts')
+        fetch(url)
           .then(response => response.json())
           .then((data) => { setData(data) })
         setLoadingData(false);
@@ -24,7 +24,7 @@ function useFetch() {
 export default function RoutedUser() {
   let params = useParams();
   const userdata = useRef(null);
-  const [isDataLoading, data] = useFetch();
+  const [isDataLoading, data] = useFetch('http://jsonplaceholder.typicode.com/posts');
 
 if (isDataLoading || !data){
   return (<p>Data is loading...</p>)
