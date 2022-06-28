@@ -3,7 +3,9 @@ import React, { useState, useEffect } from 'react';
 import Users from './Users.js';
 import Posts from './Posts.js';
 import ParentElement from './ParentElement.js';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import AppFetchData from './AppFetchData';
+
 
 function App() {
   const [data, setData] = useState([]); 
@@ -19,6 +21,7 @@ function App() {
 
   return (
     <div className="App">
+    <AppFetchData />
       <div>
         <ul>
           {data.map(item => (
