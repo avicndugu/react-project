@@ -4,7 +4,7 @@ import Users from './Users.js';
 import Posts from './Posts.js';
 import ParentElement from './ParentElement.js';
 import { Link } from 'react-router-dom';
-import AppFetchData from './AppFetchData';
+import AppFetchData2 from './AppFetchData2';
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-    <AppFetchData />
+    <AppFetchData2 />
       <div>
         <ul>
           {data.map(item => (
